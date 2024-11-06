@@ -158,10 +158,18 @@ public class JavaFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_Text1ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-int angka1 = Integer.parseInt(Text1.getText());
-int angka2 = Integer.parseInt(Text2.getText());
-int  hasil = angka1 + angka2 ;
-Texth.setText(String.valueOf(hasil));
+    try {
+            // Mencoba untuk mengonversi input menjadi angka
+            int angka1 = Integer.parseInt(Text1.getText());
+            int angka2 = Integer.parseInt(Text2.getText());
+
+            // Melakukan penjumlahan jika input valid
+            int hasil = angka1 + angka2;
+            Texth.setText(String.valueOf(hasil));
+        } catch (NumberFormatException e) {
+            // Menampilkan pesan jika input bukan angka
+            javax.swing.JOptionPane.showMessageDialog(this, "Input harus berupa angka!", "Input Tidak Valid", javax.swing.JOptionPane.WARNING_MESSAGE);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
